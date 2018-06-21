@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">AutoI</string>
+    <string-array name="controller_array">
+        <!--item>User Profile</item-->
+        <item>Schedules</item>
+        <item>Metrics</item>
+        <!--item>About Us</item-->
+        <!--item>Contact Us</item-->
+        <item>Logout</item>
+    </string-array>
+    <string-array name="controller_names">
+        <item>Bedroom</item>
+        <item>Hall</item>
+        <item>Kitchen</item>
+        <item>Bathroom</item>
+    </string-array>
+    <string-array name="device_names">
+        <item>Fan</item>
+        <item>Light</item>
+        <item>Geysor</item>
+        <item>3-Pin</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_web">AutoI Web</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="about_us">We are a group of three budding entrepreneurs with innovative and creative ideas</string>
+    <string name="contact_us">JEET   - 8298916264\nSHEKHAR   - 7337367761\nSOUMYAJIT - 9154748948</string>
+</resources>

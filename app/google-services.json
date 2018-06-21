@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "34955841339",
+    "firebase_url": "https://autoi-homes.firebaseio.com",
+    "project_id": "autoi-homes",
+    "storage_bucket": "autoi-homes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34955841339:android:b5718b95b175836a",
+        "android_client_info": {
+          "package_name": "com.autoihomes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34955841339-neorbdsi9qg82hbs32knkl66202lkbir.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "34955841339-td4rdba9bivl0io2geu0625qdbktj6gp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.autoihomes",
+            "certificate_hash": "571981889081b49555deb92d8e24742ec299cc22"
+          }
+        },
+        {
+          "client_id": "34955841339-neorbdsi9qg82hbs32knkl66202lkbir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDS1iCR29fmwJLLOI8MPzjrWOOH74h88s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34955841339-neorbdsi9qg82hbs32knkl66202lkbir.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

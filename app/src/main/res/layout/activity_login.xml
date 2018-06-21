@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:weightSum="20"  android:background="@drawable/background"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:src="@drawable/splash"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_weight="6"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Username"
+        android:backgroundTint="@color/colorWhite"
+        android:textColorHint="@color/colorGreyLight"
+        android:textColor="@color/colorWhite"
+        android:id="@+id/etUsername"
+        android:layout_weight="2"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Password"
+        android:id="@+id/etPassword"
+        android:inputType="textPassword"
+        android:layout_weight="2"
+        android:backgroundTint="@color/colorWhite"
+        android:textColorHint="@color/colorGreyLight"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:id="@+id/btnForgotPassword"
+        android:src="@drawable/forgotpassword"
+        android:layout_gravity="right"
+        android:foregroundGravity="right"
+        android:layout_weight="2"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:id="@+id/btnNewUser"
+        android:src="@drawable/newuser"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:onClick="registerAction"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:id="@+id/btnLogin"
+        android:src="@drawable/login"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_weight="2"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:id="@+id/btnConnectVia"
+        android:src="@drawable/orconnectvia"
+        android:layout_weight="2"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:src="@drawable/googlesignin"
+        android:id="@+id/googlesignin"
+        android:layout_weight="2"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent" />
+
+</LinearLayout>

@@ -129,7 +129,6 @@ public class RegisterActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
             if(result!=null){
                 if(result.equals("-1")){
                     Toast.makeText(getApplicationContext(), "ISSUE WITH REGISTER SERVICE", Toast.LENGTH_LONG).show();
@@ -147,12 +146,10 @@ public class RegisterActivity extends AppCompatActivity {
                             myDb.insertUserProfileData(entry.getKey().toString(), entry.getValue().toString());
                         }
                     }
-                    myDb.printUserProfileData(StaticValues.USERNAME);
                     StaticValues.isUserNew=true;
                     StaticValues.fragmentName="";
                     Intent registerIntent=new Intent(RegisterActivity.this,MainActivity.class);
                     RegisterActivity.this.startActivity(registerIntent);
-                    Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
                 }
             }
             else{

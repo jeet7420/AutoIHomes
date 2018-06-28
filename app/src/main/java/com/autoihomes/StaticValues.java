@@ -18,16 +18,16 @@ import java.util.TreeMap;
  */
 
 public class StaticValues {
-    public static final String loginURL="http://www.autoitechnologies.com/rest/login/authenticateUserWH";
-    public static final String registerURL="http://www.autoitechnologies.com/rest/register/registerMemberWH";
-    public static final String deviceActionURL="http://www.autoitechnologies.com/rest/action/deviceWH";
-    public static final String addControllerURL="http://www.autoitechnologies.com/rest/controller/verifyController";
-    public static final String editControllerURL="http://www.autoitechnologies.com/rest/controller/updateController";
-    public static final String getMetricsURL="http://www.autoitechnologies.com/rest/action/getMetrics";
-    public static final String googleSignInURL="http://www.autoitechnologies.com/rest/register/googleSingInWH";
-    public static final String scheduleDeviceURL="http://www.autoitechnologies.com/rest/controller/scheduleDevice";
-    public static final String changePasswordURL="http://www.autoitechnologies.com/rest/register/changePassword";
-    public static final String sendTemporaryPassword="http://www.autoitechnologies.com/rest/register/sendTemporaryPassword";
+    public static final String loginURL="http://www.autoiinnovations.com/rest/login/authenticateUserWH";
+    public static final String registerURL="http://www.autoiinnovations.com/rest/register/registerMemberWH";
+    public static final String deviceActionURL="http://www.autoiinnovations.com/rest/action/deviceWH";
+    public static final String addControllerURL="http://www.autoiinnovations.com/rest/controller/verifyController";
+    public static final String editControllerURL="http://www.autoiinnovations.com/rest/controller/updateController";
+    public static final String getMetricsURL="http://www.autoiinnovations.com/rest/action/getMetrics";
+    public static final String googleSignInURL="http://www.autoiinnovations.com/rest/register/googleSingInWH";
+    public static final String scheduleDeviceURL="http://www.autoiinnovations.com/rest/controller/scheduleDevice";
+    public static final String changePasswordURL="http://www.autoiinnovations.com/rest/register/changePassword";
+    public static final String sendTemporaryPassword="http://www.autoiinnovations.com/rest/register/sendTemporaryPassword";
     public static ArrayList<String> controllerList=new ArrayList<String>();
     public static ArrayList<String> deviceList=new ArrayList<String>();
 

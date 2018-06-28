@@ -92,7 +92,6 @@ public class CustomGrid extends BaseAdapter{
                         startDate="-1";
                         endDate="-1";
                         schedularDeviceStatus="-1";
-                        System.out.println("AAAA : " + controllerName);
                         StaticValues.schedules.remove(schedule);
                         StaticValues.fragmentName=StaticValues.SCHEDULAR;
                         StaticValues.controllerName="";
@@ -152,10 +151,6 @@ public class CustomGrid extends BaseAdapter{
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            System.out.println(result);
-            myDb.printControllerData(StaticValues.USERNAME);
-            myDb.printDeviceData(StaticValues.USERNAME);
-            myDb.printSchedularData(StaticValues.USERNAME);
         }
     }
 }

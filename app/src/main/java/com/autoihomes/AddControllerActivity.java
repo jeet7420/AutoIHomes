@@ -183,17 +183,10 @@ public class AddControllerActivity extends Fragment {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             Toast.makeText(AddControllerActivity.this.getActivity(), result, Toast.LENGTH_LONG).show();
-            System.out.println(result);
             if (result.equals("1")) {
-                System.out.println("New Controller Name -> " + newControllerName);
-                System.out.println("New Controller Number -> " + newControllerNumber);
-                System.out.println("New First Device Name -> " + newFirstDeviceName);
-                System.out.println("New Second Device Name -> " + newSecondDeviceName);
-                System.out.println("Server Result :" + StaticValues.serverResult);
                 StaticValues.controllerList.add(newControllerName);
                 StaticValues.controllerMap.put(newControllerNumber, newControllerName);
                 myDb.insertControllerData(newControllerNumber, newControllerName);
-                System.out.println("Updated Controller HashMap : " + StaticValues.controllerMap);
                 StaticValues.deviceMap.put(newControllerNumber, StaticValues.serverResult.get("devices"));
                 Iterator iterator=StaticValues.serverResult.get("devices").entrySet().iterator();
                 while(iterator.hasNext()){
@@ -226,24 +219,17 @@ public class AddControllerActivity extends Fragment {
                         myDb.insertStatusData(entry.getKey().toString(), entry.getValue().toString());
                     }
                 }
-                myDb.printControllerData(StaticValues.USERNAME);
-                myDb.printDeviceData(StaticValues.USERNAME);
-                myDb.printSchedularData(StaticValues.USERNAME);
                 StaticValues.isUserNew = false;
                 StaticValues.controllerName=newControllerName;
                 StaticValues.fragmentName=StaticValues.CONTROLLER;
                 StaticValues.flowContext=StaticValues.ADDNEWCONTROLLER;
-                StaticValues.printControllerMap();
-                StaticValues.printDeviceMap();
-                StaticValues.printUpdateControllerMap();
-                StaticValues.printUpdateDeviceMap();
             } else{
                 Toast.makeText(AddControllerActivity.this.getActivity(), "Controller could not be added. Please try again !", Toast.LENGTH_LONG).show();
             }
             Intent reloadMainActivity = new Intent(AddControllerActivity.this.getActivity(),MainActivity.class);
             AddControllerActivity.this.getActivity().startActivity(reloadMainActivity);
-            //if (pDialog.isShowing())
-            //  pDialog.dismiss();
+            if (pDialog.isShowing())
+                pDialog.dismiss();
         }
     }
 }

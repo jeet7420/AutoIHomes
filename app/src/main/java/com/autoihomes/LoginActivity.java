@@ -145,7 +145,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     lastname = str[1];
                     email = account.getEmail();
                     StaticValues.USERNAME=email;
-                    Toast.makeText(getApplicationContext(), email, Toast.LENGTH_LONG).show();
                     mode="G";
                     new MyAsyncTask().execute();
                 }
@@ -224,13 +223,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     jsonResponse = httpurlConnection.invokeService(StaticValues.loginURL, postDataParams);
                     if(jsonResponse!=null)
                         StaticValues.serverResult=jsonToHashMap(jsonResponse);
-                    //StaticValues.deviceStatus=StaticValues.serverResult.get("Devices");
-                    System.out.println("CHECK 1 : " + StaticValues.serverResult.get("homeId"));
-                    System.out.println("CHECK 2 : " + StaticValues.serverResult.get("controllers"));
-                    System.out.println("CHECK 3 : " + StaticValues.serverResult.get("security"));
-                    System.out.println("CHECK 4 : " + StaticValues.serverResult.get("topic"));
-                    System.out.println("CHECK 5 : " + StaticValues.serverResult.get("deviceStatus"));
-                    System.out.println("CHECK 6 : " + StaticValues.serverResult.get("profile"));
                 }
                 if(mode.equals("G")){
                     postDataParams=new HashMap<String, String>();
@@ -240,13 +232,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     jsonResponse = httpurlConnection.invokeService(StaticValues.googleSignInURL, postDataParams);
                     if(jsonResponse!=null)
                         StaticValues.serverResult=jsonToHashMap(jsonResponse);
-                    //StaticValues.deviceStatus=StaticValues.serverResult.get("Devices");
-                    System.out.println("CHECK 1 : " + StaticValues.serverResult.get("homeId"));
-                    System.out.println("CHECK 2 : " + StaticValues.serverResult.get("controllers"));
-                    System.out.println("CHECK 3 : " + StaticValues.serverResult.get("security"));
-                    System.out.println("CHECK 4 : " + StaticValues.serverResult.get("topic"));
-                    System.out.println("CHECK 5 : " + StaticValues.serverResult.get("status"));
-                    System.out.println("CHECK 6 : " + StaticValues.serverResult.get("profile"));
                 }
                 try{
                     if(jsonResponse!=null)
@@ -352,11 +337,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                                 }
                             }
                             StaticValues.loginUsed=true;
-                            myDb.printControllerData(StaticValues.USERNAME);
-                            myDb.printDeviceData(StaticValues.USERNAME);
-                            myDb.printSecurityData(StaticValues.USERNAME);
-                            myDb.printTopicData(StaticValues.USERNAME);
-                            myDb.printStatusData(StaticValues.USERNAME);
                         }
                     }
                     Toast.makeText(getApplicationContext(), "LOGIN SUCCESSFULL", Toast.LENGTH_LONG).show();

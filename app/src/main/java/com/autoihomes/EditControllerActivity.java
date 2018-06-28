@@ -156,7 +156,6 @@ public class EditControllerActivity extends Fragment {
                         if(jsonObject!=null)
                             response=jsonObject.get("status").toString();
                     }
-
                 }
                 catch (Exception e){
                     e.printStackTrace();
@@ -176,10 +175,6 @@ public class EditControllerActivity extends Fragment {
             Toast.makeText(EditControllerActivity.this.getActivity(), result, Toast.LENGTH_LONG).show();
             System.out.println(result);
             if (result.equals("1")) {
-                System.out.println("New Controller Name -> " + newControllerName);
-                System.out.println("New First Device Name -> " + newFirstDeviceName);
-                System.out.println("New Second Device Name -> " + newSecondDeviceName);
-                System.out.println("Server Result :" + StaticValues.serverResult);
                 StaticValues.controllerMap.put(StaticValues.controllerId, newControllerName);
                 myDb.updateControllerData(StaticValues.controllerId, newControllerName);
                 StaticValues.deviceMap.put(StaticValues.controllerId, StaticValues.updateDeviceMap);

@@ -46,15 +46,12 @@ public class Schedule{
     @Override
     public boolean equals(Object o) {
         Schedule schedule=(Schedule)o;
-        System.out.println("equals this : " + this.controllerName+this.deviceName+this.action+this.time);
-        System.out.println("equals schedule : " + schedule.controllerName+schedule.deviceName+schedule.action+schedule.time);
         return (this.controllerName+this.deviceName+this.action+this.time)
                 .equals(schedule.controllerName+schedule.deviceName+schedule.action+schedule.time);
     }
 
     @Override
     public int hashCode() {
-        System.out.println("hashcode : " + (this.controllerName+this.deviceName+this.action+this.time).hashCode());
         return (this.controllerName+this.deviceName+this.action+this.time).hashCode();
     }
 

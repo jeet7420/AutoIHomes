@@ -34,19 +34,14 @@ public class HTTPURLConnection {
 
             input = getPostDataString(params);
 
-            System.out.println("HTTP Data : " + input);
-
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
             os.flush();
 
             if (conn.getResponseCode() == 200) {
-                System.out.println("success");
             }
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
-
-            System.out.println("Output from Server .... \n");
             String jsonText = readAll(br);
             json = new JSONObject(jsonText);
         } catch (Exception e) {
@@ -65,19 +60,14 @@ public class HTTPURLConnection {
 
             input = getPostDataStringForMap(params);
 
-            System.out.println("HTTP Data : " + input);
-
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
             os.flush();
 
             if (conn.getResponseCode() == 200) {
-                System.out.println("success");
             }
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
-
-            System.out.println("Output from Server .... \n");
             String jsonText = readAll(br);
             json = new JSONObject(jsonText);
         } catch (Exception e) {

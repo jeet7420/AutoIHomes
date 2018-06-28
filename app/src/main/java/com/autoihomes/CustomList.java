@@ -83,7 +83,6 @@ public class CustomList extends ArrayAdapter<String> {
     }
     @Override
     public View getView(final int position, View view, ViewGroup parent) {
-        System.out.println("Position : " + position);
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView= inflater.inflate(R.layout.list_single, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.txt);
@@ -114,7 +113,6 @@ public class CustomList extends ArrayAdapter<String> {
                 view.setSelected(true);
                 schedule=new Schedule();
                 TextView txtTitle = (TextView) view.findViewById(R.id.txt);
-                System.out.println("LONG CLICK ITEM -> " + txtTitle.getText().toString());
                 controllerId=StaticValues.controllerId;
                 controllerName=StaticValues.controllerName;
                 deviceId=StaticValues.getDeviceId(txtTitle.getText().toString(), StaticValues.deviceMapForSelectedController);
@@ -127,7 +125,6 @@ public class CustomList extends ArrayAdapter<String> {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("Button Clicked : " + position);
                 name=deviceName[position];
                 Iterator iteratorDeviceMapForSelectedController = StaticValues.deviceMapForSelectedController.entrySet().iterator();
                 while (iteratorDeviceMapForSelectedController.hasNext()) {
@@ -139,9 +136,6 @@ public class CustomList extends ArrayAdapter<String> {
                 controllerId=StaticValues.controllerId;
                 topic=StaticValues.topicMap.get(controllerId);
                 securtiyToken=StaticValues.securityMap.get(controllerId);
-                System.out.println("check controller id : " + controllerId);
-                System.out.println("check topic : " + topic);
-                System.out.println("check security token : " + securtiyToken);
                 if(position==0){
                     if(isFanOn){
                         isFanOn=false;
@@ -168,7 +162,6 @@ public class CustomList extends ArrayAdapter<String> {
                 }
                 TestMQTT testMQTT=new TestMQTT();
                 testMQTT.doDemo(topic, signal, deviceId, securtiyToken);
-
                 new MyAsyncTask().execute();
             }
         });
@@ -180,21 +173,9 @@ public class CustomList extends ArrayAdapter<String> {
             layoutInflator = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             final View layout = layoutInflator.inflate(R.layout.timer,
                     (ViewGroup) v.findViewById(R.id.popup_timer));
-
-            //popupWindow = new PopupWindow(layout, 1000, 750, true);
             popupWindow = new PopupWindow(layout, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
             popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
             popupWindow.setFocusable(true);
-
-
-
-            /*layout.setOnTouchListener(new View.OnTouchListener(){
-                @Override
-                public boolean onTouch(View view, MotionEvent motionEvent){
-                    popupWindow.dismiss();
-                    return true;
-                }
-            });*/
 
             Toolbar toolbar = (Toolbar) layout.findViewById(R.id.mytoolbar);
             TextView textView = (TextView) toolbar.findViewById(R.id.tv_toolbar);
@@ -341,7 +322,6 @@ public class CustomList extends ArrayAdapter<String> {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            System.out.println(result);
             if(deviceActionMode.equals("U")){
                 myDb.updateStatusData(deviceId, signal);
                 StaticValues.statusMap=myDb.readStatusData(StaticValues.USERNAME);

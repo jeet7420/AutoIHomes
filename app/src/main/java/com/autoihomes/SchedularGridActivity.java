@@ -41,8 +41,6 @@ public class SchedularGridActivity extends Fragment {
         View view=inflater.inflate(R.layout.activity_schedular, container, false);
         tvNoSchedules=(TextView)view.findViewById(R.id.tvNoSchedules);
         numberOfSchedules=StaticValues.schedules.size();
-        System.out.println("NUMBER OF SCHEDULES : " + numberOfSchedules);
-        System.out.println(StaticValues.schedules);
         if(numberOfSchedules>0){
             tvNoSchedules.setVisibility(View.GONE);
             schedulesArray=new String[numberOfSchedules];
@@ -51,7 +49,6 @@ public class SchedularGridActivity extends Fragment {
             Iterator iterator=StaticValues.schedules.iterator();
 
             while(iterator.hasNext()){
-                System.out.println("SCHEDULE POSITION : " + position);
                 schedule=new Schedule();
                 schedule=(Schedule)iterator.next();
                 if("1".equals(schedule.getAction()))

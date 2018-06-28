@@ -56,21 +56,17 @@ public class ControllerActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        System.out.println("Inside Controller Activity");
         myDb = new DatabaseHelper(this.getActivity());
         userId=StaticValues.USERNAME;
         controllerName=StaticValues.controllerName;
         controllerId=StaticValues.getControllerId(controllerName);
         position=0;
         StaticValues.controllerId=controllerId;
-        System.out.println("CONTROLLER ID : " + controllerId);
-        System.out.println("CONTROLLER NAME : " + controllerName);
         StaticValues.printControllerMap();
         StaticValues.printDeviceMap();
         deviceMapForSelectedController=StaticValues.getDeviceMapForSelectedController(controllerId);
         StaticValues.deviceMapForSelectedController=deviceMapForSelectedController;
         numberOfDevices=deviceMapForSelectedController.size();
-        System.out.println("NUMBER OF DEVICES : " + numberOfDevices);
         deviceName=new String[numberOfDevices];
         deviceId=new String[numberOfDevices];
         imageId=new Integer[numberOfDevices];
@@ -139,7 +135,6 @@ public class ControllerActivity extends Fragment {
         StaticValues.firstDeviceId=deviceId[0];
         StaticValues.secondDeviceId=deviceId[1];
 
-        System.out.println("CONTROLLER : " + StaticValues.controllerName);
         CustomList adapter = new
                 CustomList(ControllerActivity.this.getActivity(), deviceName, imageId, deviceStatusImage);
         list=(ListView)view.findViewById(R.id.list);
